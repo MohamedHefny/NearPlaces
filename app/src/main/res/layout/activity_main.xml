@@ -6,13 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <include
+        android:id="@+id/home_toolbar"
+        layout="@layout/toolbar_home" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
+        tools:listitem="@layout/item_place" />
+
+    <ProgressBar
+        android:id="@+id/home_progressbar"
+        android:layout_width="@dimen/home_progressbar_size"
+        android:layout_height="@dimen/home_progressbar_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/home_progress_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/please_wait"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/home_progressbar"
+        app:layout_constraintStart_toStartOf="@id/home_progressbar"
+        app:layout_constraintTop_toBottomOf="@id/home_progressbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NearPlaces</string>
+    <string name="home_title">Near By</string>
+    <string name="places_mode_realtime">Realtime</string>
+    <string name="places_mode_single">Single update</string>
+    <string name="please_wait">Please wait…</string>
+
 </resources>
