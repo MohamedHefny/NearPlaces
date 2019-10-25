@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <include
         android:id="@+id/home_toolbar"
@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@android:color/white"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_toolbar"
         tools:listitem="@layout/item_place" />
@@ -23,6 +24,17 @@
         android:id="@+id/home_progressbar"
         android:layout_width="@dimen/home_progressbar_size"
         android:layout_height="@dimen/home_progressbar_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/home_state_info_img"
+        android:layout_width="@dimen/home_state_info_size"
+        android:layout_height="@dimen/home_state_info_size"
+        android:src="@drawable/ic_cloud_off"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,5 +50,5 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/home_progressbar"
         app:layout_constraintStart_toStartOf="@id/home_progressbar"
-        app:layout_constraintTop_toBottomOf="@id/home_progressbar" />
+        app:layout_constraintTop_toBottomOf="@id/home_state_info_img" />
 </androidx.constraintlayout.widget.ConstraintLayout>

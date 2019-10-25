@@ -4,5 +4,7 @@
     <string name="places_mode_realtime">Realtime</string>
     <string name="places_mode_single">Single update</string>
     <string name="please_wait">Please wait…</string>
+    <string name="data_not_found">No data found !!</string>
+    <string name="something_wrong">Something went wrong !!</string>
 
 </resources>
