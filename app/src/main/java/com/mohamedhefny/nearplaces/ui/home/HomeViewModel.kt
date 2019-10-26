@@ -1,5 +1,7 @@
 package com.mohamedhefny.nearplaces.ui.home
 
+import android.content.Context
+import android.location.Location
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.mohamedhefny.nearplaces.dataSource.Entities.Place
@@ -7,17 +9,30 @@ import com.mohamedhefny.nearplaces.dataSource.PlacesRepository
 
 class HomeViewModel : ViewModel() {
 
-    /**This method get places from Places repository
-     * @param updateType is the type of updating mode 0 or 1 indicating to realtime or single update sequentially
+    /**
+     * This method get places from PlacesRepository.
+     * @param location is the current user location.
      */
-    fun getPlaces(): LiveData<List<Place>> = PlacesRepository.getPlaces()
+    fun getPlaces(location: Location): LiveData<List<Place>> = PlacesRepository.getPlaces(location)
 
+    /**
+     * Returns 0 or 1 indicating to update mode Realtime or SingleUpdate respectively.
+     */
+    fun getUpdatingMode(context: Context) =
+        PlacesRepository.getUpdateMode(context)
 
-    fun getUpdatingMode(): Int {
-        return 0
-    }
+    /**
+     * Update user placesUpdate mode.
+     * @param context can be view or application context.
+     * @param updateMode 0 or 1 indicating to update mode Realtime or SingleUpdate respectively.
+     */
+    fun changeUpdatingMode(context: Context, updateMode: Int) =
+        PlacesRepository.changeUpdateMode(context, updateMode)
 
-    fun changeUpdatingMode(mode: Int) {
-
-    }
+    /**
+     * Update user current location.
+     * Call this method only in a Realtime updating mode.
+     * @param location is the current user location.
+     */
+    fun newLocation(location: Location) = PlacesRepository.onNewLocation(location)
 }

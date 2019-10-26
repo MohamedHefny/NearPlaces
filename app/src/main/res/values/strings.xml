@@ -7,4 +7,5 @@
     <string name="data_not_found">No data found !!</string>
     <string name="something_wrong">Something went wrong !!</string>
 
+    <string name="permission_required_location">To get the near places the app need to use your device location.</string>
 </resources>
