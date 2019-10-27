@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var homePlacesAdapter: HomePlacesAdapter
 
-    private val LOCATION_CHECHING_INTERVAL: Long = 15000 //ms
+    private val LOCATION_CHECHING_INTERVAL: Long = 5000 //ms
     private val LOCATION_PERMISSION_RQ by lazy { 101 }
 
     override fun onCreate(savedInstanceState: Bundle?) {

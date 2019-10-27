@@ -10,7 +10,7 @@ data class Venue(
     val placeId: String,
     val name: String,
     @Expose(serialize = false, deserialize = false)
-    val image: String = "N/A",
+    var image: String = "N/A",
     val location: Location
 )
 
